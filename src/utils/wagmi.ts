@@ -32,8 +32,8 @@ const modal = createAppKit({
     //this is optional
     name: 'ByFx',
     description: 'ByForex',
-    // url: window?.location?.hostname || "", // origin must match your domain & subdomain
-    url: 'http://localhost:5173' || "", // origin must match your domain & subdomain
+    url: window?.location?.hostname || "", // origin must match your domain & subdomain
+    // url: 'http://localhost:5173', // origin must match your domain & subdomain
     icons: ['https://avatars.githubusercontent.com/u/37784886']
   },
   features: {
