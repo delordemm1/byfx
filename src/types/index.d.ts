@@ -1,3 +1,14 @@
+import * as React from 'react';
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'appkit-button': AppkitButtonProps;
+        }
+    }
+}
+interface AppkitButtonProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+    // children?: React.ReactNode;
+}
 export interface UserInfo {
     account: string;
     id: bigint;

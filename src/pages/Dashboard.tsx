@@ -25,7 +25,7 @@ import toast from "react-hot-toast";
 // import { convertTimestampToDate } from "../utils";
 import { byForexConfig } from "../abi";
 import { readContract } from "wagmi/actions";
-import { config } from "../utils/wagmi";
+// import { config } from "../utils/wagmi";
 const packages = ["20", "40", "80", "160", "320", "640", "1280", "2560", "5120", "10240", "20480", "40960"]
 const Dashboard = () => {
 
@@ -156,14 +156,14 @@ const Dashboard = () => {
 
   const userInfomation = async () => {
     try {
-      const res = await readContract(config, {
-        address: byForexConfig.address as `0x${string}`,
-        abi: byForexConfig.abi,
-        functionName: 'userInfo',
-        args: [userId as bigint],
-      })
+      // const res = await readContract(config, {
+      //   address: byForexConfig.address as `0x${string}`,
+      //   abi: byForexConfig.abi,
+      //   functionName: 'userInfo',
+      //   args: [userId as bigint],
+      // })
       // toast.success(Number(c.totalDeposit) as any)
-      return res
+      // return res
     } catch (error) {
       console.error('Error fetching blockchain data:', error);
     }

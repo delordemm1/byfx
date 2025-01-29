@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   logLevel: 'info', // Ensure this is set to show logs
+  server: {
+    host: '127.0.0.1',
+  }
 })
