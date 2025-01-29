@@ -27,7 +27,7 @@ const modal = createAppKit({
   projectId,
   networks: [bsc],
   // enableWalletGuide: false,
-  allWallets: "ONLY_MOBILE",
+  allWallets: "SHOW",
   metadata: {
     //this is optional
     name: 'ByFx',
