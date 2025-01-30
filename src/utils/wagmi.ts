@@ -43,7 +43,7 @@ createAppKit({
     connectMethodsOrder: ['wallet'],
     walletFeaturesOrder: [],
   },
-  themeMode: "light"
+  themeMode: "dark"
 })
 
 export {

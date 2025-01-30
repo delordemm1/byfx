@@ -43,7 +43,6 @@ const Navbar = () => {
         </div>
       )}
       <div className="gap-2 flex max-sm:hidden appkit-buttons-container">
-        <ActionButtonList />
         <ConnectButton />
       </div>
 
@@ -82,7 +81,6 @@ const Navbar = () => {
               Referals
             </button>
             <div className="gap-2 flex " onClick={() => setIsMenuOpen(false)}>
-              <ActionButtonList />
               <ConnectButton />
             </div>
           </div>
