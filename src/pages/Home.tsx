@@ -1,10 +1,11 @@
 // import { ConnectButton } from "@rainbow-me/rainbowkit"
 // import { Packakges } from "../utils/constants"
 // import PackageCard from "../components/PackageCard"
+import { useAppKit } from "@reown/appkit/react";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom"
-import { useAccount } from "wagmi"
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAccount } from "wagmi";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,25 +13,29 @@ const Home = () => {
   const { isConnected } = useAccount();
 
   const goDashboard = () => {
-    if(!isConnected) {
-      return toast.error('Please connect your wallet to continue');
+    if (!isConnected) {
+      toast.error("Please connect your wallet to continue");
+      return useAppKit().open();
     }
-    navigate('/dashboard')
-  }
+    navigate("/dashboard");
+  };
   // register page
   // const goRegister = () => {
   //   navigate('/register')
   // }
   const location = useLocation();
-  
+
   useEffect(() => {
-    if(location.search.split('=')[1]){
-      localStorage.setItem('referralCode', JSON.stringify(location.search.split('=')[1]));
-    }else{
-      localStorage.setItem('referralCode', JSON.stringify('1000'));
+    if (location.search.split("=")[1]) {
+      localStorage.setItem(
+        "referralCode",
+        JSON.stringify(location.search.split("=")[1])
+      );
+    } else {
+      localStorage.setItem("referralCode", JSON.stringify("1000"));
     }
-    console.log(localStorage.getItem('referralCode'))
-  }, [location.search.split('=')[1]])
+    console.log(localStorage.getItem("referralCode"));
+  }, [location.search.split("=")[1]]);
 
   return (
     <div>
@@ -51,11 +56,23 @@ const Home = () => {
       {/* =================== MAIN PAGE ====================== */}
       <div className="py-20 md:py-32 px-3 overflow-y-auto h-screen w-full home container mx-auto flex flex-col items-center">
         <div className="flex flex-col gap-5 items-center md:p-20 max-w-[900px] p-5 m-auto border-primary border rounded-lg border-opacity-20 bg-primary bg-opacity-10 backdrop-blur-md">
-          <p className="font-bold text-2xl text-center md:text-5xl text-white">Join Now</p>
+          <p className="font-bold text-2xl text-center md:text-5xl text-white">
+            Join Now
+          </p>
           <p className="text-white px-2 py-3 text-sm md:text-base">
-          Experience a fully decentralized platform with no admin control, where all income is automatically distributed through smart contracts. Transparent, secure, and fair – our system empowers you to grow your network and earn in real time without intermediaries. Join today and take control of your financial future!          </p>
+            Experience a fully decentralized platform with no admin control,
+            where all income is automatically distributed through smart
+            contracts. Transparent, secure, and fair – our system empowers you
+            to grow your network and earn in real time without intermediaries.
+            Join today and take control of your financial future!{" "}
+          </p>
           <div className="flex w-full justify-center gap-3 py-3">
-            <button onClick={goDashboard} className="text-primary border-2 scale-[1.01] rounded-full px-8 py-2 border-primary">Enter App</button>
+            <button
+              onClick={goDashboard}
+              className="text-primary border-2 scale-[1.01] rounded-full px-8 py-2 border-primary"
+            >
+              Enter App
+            </button>
           </div>
         </div>
 
@@ -79,12 +96,13 @@ const Home = () => {
 
         {/* ========= FOOTER ======== */}
         <div className="flex w-full text-center absolute bottom-0 left-0 justify-center">
-          <p className="text-primary text-sm">&copy; {new Date().getFullYear()} ByForex. All rights reserved.</p>
+          <p className="text-primary text-sm">
+            &copy; {new Date().getFullYear()} ByForex. All rights reserved.
+          </p>
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
