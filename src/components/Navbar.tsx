@@ -3,7 +3,6 @@ import { MenuIcon } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAccount } from "wagmi";
-import ActionButtonList from "./ActionButton";
 import { ConnectButton } from "./ConnectButton";
 
 const Navbar = () => {

@@ -1,3 +1,12 @@
+export const ConnectButton = () => {
+
+  return (
+    <div className="rounded-3xl">
+      <appkit-button />
+    </div>
+  )
+}
+
 // import { ConnectButton as RainbowConnectButton } from '@rainbow-me/rainbowkit';
 // import { Wallet } from 'lucide-react';
 
@@ -76,26 +85,21 @@
 //   );
 // };
 
-import { useAccount } from 'wagmi'
+// import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from "@reown/appkit/react";
+// import { bsc } from '@reown/appkit/networks'
 
-import { useAppKitAccount } from '@reown/appkit/react'
 
-const compactHash = (hash: string) => {
-  return hash.slice(0, 7) + '...' + hash.slice(-5)
-}
+// export function ConnectButton() {
+//   const modal = useAppKit()
+//   const { switchNetwork } = useAppKitNetwork()
 
-export const ConnectButton = () => {
-  const wagmiAccount = useAccount()
-  const account = useAppKitAccount()
+//   function openAppKit() {
+//     modal.open()
+//   }
 
-  const compactAddress = compactHash(account.address || '')
-  const compactAddressWagmi = compactHash(wagmiAccount.address || '')
-
-  return (
-    <div className="rounded-3xl">
-      {/* <span className="text-black">useAppKitAccount: {compactAddress}</span>
-      <span className="text-black">useAccount (wagmi): {compactAddressWagmi}</span> */}
-      <appkit-button />
-    </div>
-  )
-}
+//   return (
+//     <div className="action-button-list flex gap-2 justify-center items-center">
+//       <button onClick={openAppKit} className='flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 px-3 py-2 sm:px-4 sm:py-2 rounded-lg transition-colors text-white'>Connect Wallet</button>
+//     </div>
+//   )
+// }
