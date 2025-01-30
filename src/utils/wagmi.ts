@@ -22,11 +22,13 @@ export const wagmiAdapter = new WagmiAdapter({
   ssr: true,
 })
 
-const modal = createAppKit({
+// const modal = createAppKit({
+createAppKit({
+  debug: true,
   adapters: [wagmiAdapter],
   projectId,
   networks: [bsc],
-  // enableWalletGuide: false,
+  enableWalletGuide: true,
   allWallets: "SHOW",
   metadata: {
     //this is optional
@@ -37,11 +39,13 @@ const modal = createAppKit({
     icons: ['https://avatars.githubusercontent.com/u/37784886']
   },
   features: {
-    analytics: true,
+    // analytics: true,
+    connectMethodsOrder: ['wallet'],
+    walletFeaturesOrder: [],
   },
   themeMode: "light"
 })
 
 export {
-  modal,
+  // modal,
 }
